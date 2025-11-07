@@ -1,33 +1,44 @@
 import streamlit as st
-import os
 from datetime import datetime
-from PIL import Image
 
+# --- Configuración de la página ---
 st.set_page_config(page_title="App de Descarga de Directorio", page_icon="📦", layout="centered")
 
-# --- Logo ---
-logo_path = "lupa-belisario.png"
-if os.path.exists(logo_path):
-    logo = Image.open(logo_path)
-    st.image(logo, width=120)
+# --- Imagen superior ---
+st.image("lupa-belisario.png", width=180)
 
 # --- Título ---
 st.title("📦 App de Descarga de Directorio")
-st.markdown("Descarga la versión más reciente del ejecutable para actualización de datos.")
+st.markdown("Descarga la versión más reciente del directorio de actualización de datos.")
 
-# --- Ruta local del archivo (solo visible cuando se suba junto con la app) ---
-ruta_exe = "Directorio_actualizacion_datos.exe"
+# --- Información del archivo ---
+fecha_modificacion = "07/11/2025 14:32"
+url_descarga = "https://drive.google.com/uc?export=download&id=1gUxQzFyE9CJ9TuFB-_Yr1rMKnm-RWdz3"
 
-if os.path.exists(ruta_exe):
-    fecha_modificacion = datetime.fromtimestamp(os.path.getmtime(ruta_exe)).strftime("%d/%m/%Y %H:%M:%S")
-    st.markdown(f"**🕒 Fecha de última actualización:** {fecha_modificacion}")
+st.markdown(f"**🕒 Fecha de última actualización:** {fecha_modificacion}")
+st.divider()
 
-    with open(ruta_exe, "rb") as file:
-        st.download_button(
-            label="⬇️ Descargar Directorio_actualizacion_datos.exe",
-            data=file,
-            file_name="Directorio_actualizacion_datos.exe",
-            mime="application/octet-stream",
-        )
-else:
-    st.error("❌ No se encontró el archivo ejecutable en el repositorio.")
+# --- Botón de descarga (estilo personalizado) ---
+st.markdown(
+    f"""
+    <div style="text-align:center; margin-top: 20px;">
+        <a href="{url_descarga}" target="_blank">
+            <button style="
+                background-color:#0b5394;
+                color:white;
+                padding:14px 28px;
+                border:none;
+                border-radius:10px;
+                font-size:18px;
+                font-weight:600;
+                cursor:pointer;
+                box-shadow:0px 2px 6px rgba(0,0,0,0.2);">
+                ⬇️ Descargar Directorio_actualizacion_datos.exe
+            </button>
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown("<br><p style='text-align:center;color:gray;'>© Belisario SAS 2025</p>", unsafe_allow_html=True)
