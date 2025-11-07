@@ -42,3 +42,4 @@ st.markdown(
 )
 
 st.markdown("<br><p style='text-align:center;color:gray;'>© Belisario SAS 2025</p>", unsafe_allow_html=True)
+
