@@ -1,14 +1,13 @@
 import streamlit as st
 from datetime import datetime
 
-# --- Configuración página ---
 st.set_page_config(
     page_title="App de Descarga de Directorio",
     page_icon="📦",
     layout="centered"
 )
 
-# --- Imagen superior ---
+# Imagen superior
 st.markdown(
     """
     <div style="text-align:center; margin-top:20px;">
@@ -18,7 +17,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --- Tarjeta principal ---
+# Tarjeta principal COMPLETA dentro de un solo markdown
 st.markdown(
     """
     <div style="
@@ -28,6 +27,7 @@ st.markdown(
         box-shadow: 0px 6px 16px rgba(0,0,0,0.12);
         margin-top: 25px;
     ">
+
         <h1 style="
             text-align:center; 
             color:#0b5394; 
@@ -87,7 +87,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --- Footer ---
+# Footer
 st.markdown(
     """
     <p style='text-align:center; color:gray; margin-top:25px; font-size:14px;'>
