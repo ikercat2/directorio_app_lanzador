@@ -80,7 +80,7 @@ html_page = f"""
         text-align:center;
         border-left:5px solid #0b5394;
     ">
-        🕒 <strong>Última actualización:</strong> 03/11/2025 7:55 AM
+        🕒 <strong>Última actualización:</strong> 05/12/2025 5:50 AM
     </div>
 
     <a href="https://drive.google.com/uc?export=download&id=1gUxQzFyE9CJ9TuFB-_Yr1rMKnm-RWdz3" target="_blank">
@@ -108,3 +108,4 @@ html_page = f"""
 """
 
 components.html(html_page, height=950, scrolling=False)
+
